@@ -2,10 +2,10 @@
 - connection: local
   hosts: localhost
   roles:
-    - role: telusdigital.aws-infrastructure
-      domain: teluswebteam.com
-      required_systems:
-        - application
+    # - role: telusdigital.aws-infrastructure
+    #   domain: teluswebteam.com
+    #   required_systems:
+    #     - application
     - role: telusdigital.mariadb
       mariadb_server: yes
       mariadb_accepts_external_connections: yes

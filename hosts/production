@@ -6,4 +6,4 @@ environment_tier=production
 application
 
 [application]
-application.moderngolf-production.teluswebteam.com
+ec2-52-20-226-185.compute-1.amazonaws.com
