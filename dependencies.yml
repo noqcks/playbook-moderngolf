@@ -1,0 +1,6 @@
+---
+- src: telusdigital.aws-infrastructure
+- src: telusdigital.nginx
+- src: telusdigital.php
+- src: telusdigital.mariadb
+- src: franklinkim.vsftpd

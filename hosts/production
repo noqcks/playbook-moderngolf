@@ -1,0 +1,9 @@
+[all:vars]
+project=moderngolf
+environment_tier=production
+
+[common:children]
+application
+
+[application]
+application.moderngolf-production.teluswebteam.com

@@ -1,0 +1,27 @@
+---
+- connection: local
+  hosts: localhost
+  roles:
+    - role: telusdigital.aws-infrastructure
+      domain: teluswebteam.com
+      required_systems:
+        - application
+    - role: telusdigital.mariadb
+      mariadb_server: yes
+      mariadb_accepts_external_connections: yes
+    - role: telusdigital.nginx
+      nginx_php_enabled: yes
+      nginx_auth_enabled: "{% if environment_tier not in ['production'] %}yes{% else %}no{% endif %}"
+      nginx_redirects:
+        - { source: /blog, destination: '$scheme://$host/', type: permanent }
+    - role: telusdigital.php
+      php_modules:
+        - php5-gd
+        - php5-mysql
+    - role: franklinkim.vsftpd
+      vsftpd_service_enabled: yes
+      vsftpd_service_state: started
+      vsftpd_users:
+        - username: ftpuser
+          name: FTP User
+          password: '$1$somesalt$mYIgWEVYblPgRwfPvotU51'
