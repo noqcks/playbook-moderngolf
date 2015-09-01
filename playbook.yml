@@ -11,9 +11,6 @@
     #   mariadb_accepts_external_connections: yes
     - role: telusdigital.nginx
       nginx_php_enabled: yes
-      nginx_auth_enabled: "{% if environment_tier not in ['production'] %}yes{% else %}no{% endif %}"
-      nginx_redirects:
-        - { source: /blog, destination: '$scheme://$host/', type: permanent }
     - role: telusdigital.php
       php_modules:
         - php5-gd
