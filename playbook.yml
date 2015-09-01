@@ -25,3 +25,5 @@
         - username: ftpuser
           name: FTP User
           password: '$1$somesalt$mYIgWEVYblPgRwfPvotU51'
+  vars:
+    database_password: benji
