@@ -1,6 +1,6 @@
 ---
-- connection: local
-  hosts: localhost
+- hosts: application
+  sudo: True
   roles:
     # - role: telusdigital.aws-infrastructure
     #   domain: teluswebteam.com
